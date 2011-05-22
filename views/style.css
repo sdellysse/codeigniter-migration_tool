@@ -1,0 +1,13 @@
+body {
+  background-color: #380101;
+  color: #FFFFFF;
+}
+
+#main-table {
+  width: 100%;
+}
+
+#header {
+  font: 48pt Helvetica;
+  text-align: center;
+}
