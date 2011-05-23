@@ -92,6 +92,20 @@
               var utc_date = utc_string_to_date(time);
               $this.html(format_date(utc_date));
             });
+
+            $('.source').hide();
+            //$('.source').bind('click', function (event) {
+            //    var $this = $(this);
+
+            //    if (false) {
+            //    } else if ($this.hasClass('closed')) {
+            //        $this.removeClass('closed').addClass('opened');
+            //        $this.show();
+            //    } else if ($this.hasClass('opened')) {
+            //        $this.removeClass('opened').addClass('closed');
+            //        $this.hide();
+            //    }
+            //});
           });
         </script>
     </head>
@@ -99,7 +113,7 @@
         <table id="main-table">
             <tr id="header-row"> <td colspan="2" id="header"> CodeIgniter Migration Tool </td> </tr>
             <tr>
-                <td><?php echo $left_column ?></td>
+                <td id="migration-tables"><?php echo $left_column ?></td>
                 <td><?php echo $right_column ?></td>
             </tr>
         </table>
