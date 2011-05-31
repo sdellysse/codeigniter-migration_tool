@@ -12,11 +12,11 @@
                 <td><input type="submit" value="Migrate" disabled="disabled" /></td>
             <?php endif ?>
             <?php if ($migration->is_empty): ?>
-                <td class="<?php if ($migration->is_current): ?> current-migration <? endif ?>">
+                <td class="<?php if ($migration->is_current): ?> current-migration <?php endif ?>">
                     Empty Database
                 </td>
             <?php else: ?>
-                <td class="<?php if ($migration->is_current): ?> current-migration <? endif ?>">
+                <td class="<?php if ($migration->is_current): ?> current-migration <?php endif ?>">
                     <span class="time-display time-is-<?php echo $migration->timestamp ?>">
                         <?php echo $migration->formatted_timestamp ?> UTC
                     </span> - <?php echo $migration->name ?>

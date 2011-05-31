@@ -32,19 +32,20 @@ class Migrations {
 
     function all_migrations () {
         $glob = glob(self::$dir."/*.php");
-        if (! $glob) {
-            return array();
-        }
-
         $retval = array();
-        foreach ($glob as $filename) {
-            $match = preg_match('/^(\d{14})_([A-Za-z0-9_]+)\.php$/', basename($filename), $matches);
-            if ($match) {
-                $retval []= new Migration($filename);
-            }
-        }
-        array_unshift($retval, new EmptyMigration);
 
+        if ($glob) {
+            $retval = array();
+            foreach ($glob as $filename) {
+                $match = preg_match('/^(\d{14})_([A-Za-z0-9_]+)\.php$/', basename($filename), $matches);
+                if ($match) {
+                    $retval []= new Migration($filename);
+                }
+            }
+        } else {
+        }
+
+        array_unshift($retval, new EmptyMigration);
         return $retval;
     }
 
